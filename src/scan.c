@@ -31,13 +31,13 @@ void setInquiryScanParameters(int socketDescriptor) {
     //set filter: all
     if (setsockopt(socketDescriptor, SOL_HCI, HCI_FILTER, &flt, sizeof (flt)) < 0) {
         printf("Cannot set filter");
-        exit(-8);
+        exit(-7);
     }
     
     //set Periodic Inquiry Mode
     if (hci_send_cmd(socketDescriptor, OGF_LINK_CTL, OCF_PERIODIC_INQUIRY, PERIODIC_INQUIRY_CP_SIZE, &periodic_p) < 0) {
         printf("Cannot request periodic inquiry!\n"); //sudo?
-        exit(-9);
+        exit(-8);
     }
     
 }
@@ -101,7 +101,7 @@ int inquiryScan(int socketDescriptor) {
     
     if (hci_send_cmd(socketDescriptor, OGF_LINK_CTL, OCF_EXIT_PERIODIC_INQUIRY, 0, NULL) < 0) {
         printf("I cannot stop the inquisition!\n");
-        return -1;
+        return -9;
     }
 
     return 0;

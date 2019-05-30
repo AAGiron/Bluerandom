@@ -1,9 +1,11 @@
-Bluerandom error codes:
+Bluerandom exit error codes:
 
 -1: error at int openDev(){ in bluerandom.c. Probably an error after calling hci_open_dev().
--2: after setting parameters data hci_send_req() in inquiryScan.c. 
--3: another requisition in order to set scan enable in inquiryScan.c
--4: if non blocking option is set, this error code represents a fnctl() error in inquiryScan.c
--5: error when setting socket options at BLEinquiryScan() in inquiryScan.c
--6: when disabling BLE scan at inquiryScan.c
--7: 
+-2: after setting parameters data hci_send_req() in BLEScan.c. 
+-3: after another requisition in order to set scan enable in BLEScan.c
+-4: this error code represents a fnctl() error in BLEScan.c, about the socket non blocking 
+-5: error when setting socket options at BLEinquiryScan() in BLEScan.c
+-6: error when disabling BLE scan at BLEScan.c
+-7: error when setting socket filter at scan.c
+-8: error when requesting periodic inquiry mode at scan.c (for BR/EDR scanning)
+-9: error when stopping periodic inquiry mode at scan.c

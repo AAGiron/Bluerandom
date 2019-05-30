@@ -38,7 +38,7 @@ int main() {
     //ending
     if (retBLEScan != 0) {
         printf("Error at BLE Scan \n");
-        exit(-8);
+        exit(retBLEScan);
     }
     
     //close            

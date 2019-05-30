@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
         
         //keep reading from stdin. 
         reads = fread(info.buf, 1, SIZE_BUFFER, stdin);
-        //printf("reads:%d\n",reads);
+
         if (reads < 0 ){
             printf("Not enough entropy data.\n");    
             exit(reads);
@@ -46,10 +46,8 @@ int main(int argc, char** argv) {
                 continue;   
             }
         }                
-        //system("cat /proc/sys/kernel/random/entropy_avail");
-        
-       // sleep(1);
-        
+
+                
         info.entropy_count = reads * 8; //ATTENTION HERE. Data from bluerandom gets 7.994...
         info.buf_size = reads;
         if (ioctl(randfd, RNDADDENTROPY, &info) < 0) {
@@ -57,8 +55,7 @@ int main(int argc, char** argv) {
             printf("ERRO! RNDADDENTROPY\n");
             return (1);
         }
-        //printf("OIOIOI:\n");
-        //system("cat /proc/sys/kernel/random/entropy_avail");
+
         
     }
     //close(randfd);
