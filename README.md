@@ -7,7 +7,7 @@ If you use it with academic purposes please cite the paper ... You can also see 
 
 IoT platforms does not always have plenty of entropy sources available, and could be risky to rely only on one entropy source. Here is where stands the benefit of Bluerandom: to be used as an additional entropy source to the system.
 
-# How can I used it?
+# How can I use it?
 
 Bluerandom outputs go to stdout. You can add to the system (through IOCTL - see Tools - or rngd) or to your application.
 
