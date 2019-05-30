@@ -1,5 +1,5 @@
 //Blue Random: attempt on generating random numbers from bluetooth rssi nearby devices
-//includes and globals at:
+//includes at:
 #include "bluerandom.h"
 
 //Make a connection to local adapter.
@@ -17,14 +17,15 @@ int openDev(int *device) {
     return ret;
 }
 
-//Main function
+//Main function 
+//compilation: make     (gcc ... -lbluetooth -lm)
 //running example: sudo ./bluerandom
-int main(int argc, char **argv) {
-    int retDescriptor1, retDescriptor2, retBLEScan, retScan, status;
-    int deviceAdaptor1, deviceAdaptor2;
+int main() {
+    int retDescriptor1, retBLEScan;
+    int deviceAdaptor1;
 
     //to test
-    //setbuf(stdout, NULL);
+    setbuf(stdout, NULL);
 
     //////////open dev through HCI 
     retDescriptor1 = openDev(&deviceAdaptor1);
@@ -33,12 +34,15 @@ int main(int argc, char **argv) {
     setBLEinquiryScanParameters(retDescriptor1);
 
     retBLEScan = BLEinquiryScan(retDescriptor1);
-    if (retBLEScan != 0)
+
+    //ending
+    if (retBLEScan != 0) {
         printf("Error at BLE Scan \n");
         exit(-8);
     }
     
     //close            
+    hci_close_dev(retDescriptor1);
     close(deviceAdaptor1); 
 
 

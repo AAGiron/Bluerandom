@@ -84,9 +84,10 @@ int extractBitFromRSSI(unsigned char rssiOld, unsigned char rssi, int method) {
 }
 
 //SCAN BLE
-int BLEinquiryScan(int descriptor) {    
+int BLEinquiryScan(int descriptor) {
     int status, ret, retBit = 0;
     le_set_scan_enable_cp scan_cp;
+
     struct hci_filter nf;
     hci_filter_clear(&nf);
     hci_filter_set_ptype(HCI_EVENT_PKT, &nf);
@@ -117,8 +118,9 @@ int BLEinquiryScan(int descriptor) {
 
                     info = (le_advertising_info *) offset;
 
+                    //Read RSSI
                     if (rssiOld == 0) {
-                        rssiOld = (unsigned char) info->data[info->length];
+                        rssiOld = (unsigned char) info->data[info->length]; 
                     } else {
                         //extraction function from extraction.c
                         rssiRecntly = (unsigned char) info->data[info->length];
@@ -135,8 +137,7 @@ int BLEinquiryScan(int descriptor) {
                             }
                         }
 
-                        rssiOld = 0; //readings tomados dois a dois 
-                        //rssiOld = rssiRecntly; //reading anterior influencia o próximo. VERY BAD
+                        rssiOld = 0; //readings extracted two at a time
 
                         if (contBits >= 8) { 
                             printf("%c", random);                   //OUTPUT BYTE
@@ -151,10 +152,9 @@ int BLEinquiryScan(int descriptor) {
         }
     }
 
-    // Disable scanning.
-
+    // Disable scanning
     memset(&scan_cp, 0, sizeof (scan_cp));
-    scan_cp.enable = 0x00; // Disable flag.
+    scan_cp.enable = 0x00; // Disable flag
 
     struct hci_request disable_adv_rq = ble_hci_request(OCF_LE_SET_SCAN_ENABLE, LE_SET_SCAN_ENABLE_CP_SIZE, &status, &scan_cp);
     ret = hci_send_req(descriptor, &disable_adv_rq, 1000);
@@ -164,7 +164,7 @@ int BLEinquiryScan(int descriptor) {
         return -6;
     }
 
-    hci_close_dev(descriptor);
+
     return 0;
 }
 

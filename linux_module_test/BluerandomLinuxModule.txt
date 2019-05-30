@@ -1,0 +1,13 @@
+First of all, is it worth it? 
+
+I don't know.
+
+
+#include <net/bluetooth/bluetooth.h>
+#include <net/bluetooth/hci_core.h>
+
+
+some hcis
+https://github.com/torvalds/linux/tree/master/drivers/bluetooth
+
+
