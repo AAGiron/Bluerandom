@@ -35,6 +35,6 @@ if "Error on opening HCI device. No such device" appears you might need to start
 Suggestions are welcome!
 
 
-#Author
+# Author
 
 Alexandre Giron
