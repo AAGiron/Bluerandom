@@ -58,7 +58,7 @@ int vonNeumannExtraction(unsigned char rssiAtual, unsigned char rssiAnterior){
 		//discard result
         return -1;
 	}else{
-		if (desloc1 == 0){  //01
+		if (desloc2 == 0){  //01
 			return 0;
 		}else{
 			return 1;       //10
