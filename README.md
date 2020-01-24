@@ -3,6 +3,7 @@
 Repository for the source code of Bluerandom: Bluetooth RSSI-Based Scalable Entropy Source.
 
 If you use it with academic purposes please cite the paper ... You can also see the experiments and explanations there.
+![alt text](https://raw.githubusercontent.com/AAGiron/Bluerandom/bluerandom.png)
 
 
 IoT platforms does not always have plenty of entropy sources available, and could be risky to rely only on one entropy source. Here is where stands the benefit of Bluerandom: to be used as an additional entropy source to the system.
@@ -29,7 +30,7 @@ The Tools/ directory contains some tools created to test Bluerandom and used in 
 
 Compile the src/ code with make and run it with sudo ./bluerandom. The generation process has low throughput and depends on how much BLE devices are nearby (see the paper for details).
 
-if "Error on opening HCI device. No such device" appears you might need to start it (sudo bluetoothctl; power on; exit - or with blueman program).
+If "Error on opening HCI device. No such device" appears you might need to start it (sudo bluetoothctl; power on; exit - or with blueman program).
 
 
 Suggestions are welcome!
