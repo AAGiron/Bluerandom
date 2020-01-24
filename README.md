@@ -3,7 +3,7 @@
 Repository for the source code of Bluerandom: Bluetooth RSSI-Based Scalable Entropy Source.
 
 If you use it with academic purposes please cite the paper ... You can also see the experiments and explanations there.
-![alt text](https://raw.githubusercontent.com/AAGiron/Bluerandom/master/bluerandom.png)
+![alt text](https://github.com/AAGiron/Bluerandom/master/bluerandom.png)
 
 
 IoT platforms does not always have plenty of entropy sources available, and could be risky to rely only on one entropy source. Here is where stands the benefit of Bluerandom: to be used as an additional entropy source to the system.
