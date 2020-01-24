@@ -1,4 +1,4 @@
-##Makefile for BlueRandom
+##Makefile for Bluerandom
 
 all: defaultRule
 

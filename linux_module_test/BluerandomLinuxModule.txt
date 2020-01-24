@@ -11,3 +11,52 @@ some hcis
 https://github.com/torvalds/linux/tree/master/drivers/bluetooth
 
 
+User space vs kernel space 
+
+https://github.com/torvalds/linux/blob/master/include/net/bluetooth/hci_core.h
+
+must change hci_open_dev to  hci_dev_open(__u16 dev)
+
+lovely.
+
+And now learn how to find those symbols.
+
+
+
+Secondly, can we develop it?
+
+WARNING: undefined.............................
+
+
+sudo apt source linux-image-$(uname -r)
+sudo apt-get build-dep linux-image-$(uname -r)
+
+still undefined
+
+
+Can't give up
+
+sudo apt install linux-source
+
+ apt search linux-source
+i   linux-source                    - Linux kernel source with Ubuntu patches   
+v   linux-source-3                  -                                           
+p   linux-source-4.10.0             - Linux kernel source for version 4.10.0 wit
+p   linux-source-4.11.0             - Linux kernel source for version 4.11.0 wit
+p   linux-source-4.13.0             - Linux kernel source for version 4.13.0 wit
+p   linux-source-4.15.0             - Linux kernel source for version 4.15.0 wit
+i A linux-source-4.4.0              - Linux kernel source for version 4.4.0 with
+p   linux-source-4.8.0              - Linux kernel source for version 4.8.0 with
+giron-HP-EliteBook-8470p giron # apt install linux-source-4.8.0
+
+
+No puede ser esto....
+
+extract... sudo su... make menuconfig ... make ... 
+
+
+
+
+
+
+

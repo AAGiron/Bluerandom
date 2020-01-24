@@ -1,4 +1,16 @@
+/*  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+*/
+
 #include "bluerandom.h"
+
 
 //unused
 void printBinary(int n){
@@ -39,18 +51,17 @@ int diferencaParOuImpar(unsigned char rssiAtual, unsigned char rssiOld){
 //"Early" Von neumann (last bit of two consecutive RSSI readings)
 int vonNeumannExtraction(unsigned char rssiAtual, unsigned char rssiAnterior){
 	unsigned char desloc1,desloc2;
-	desloc1 = (rssiAtual << 7); 
-	desloc2 = (rssiAnterior << 7);
+	desloc1 = (rssiAtual & 0x1); 
+	desloc2 = (rssiAnterior & 0x1);
 	//(00 || 11)
-	if ( ((desloc1  >> 7 == 0) && (desloc2  >> 7 ==0)) ||
-		((desloc1  >> 7 == 1) && (desloc2 >> 7 ==1)) ){
+	if (desloc1 == desloc2){
 		//discard result
         return -1;
 	}else{
-		if ( desloc1 >> 7 == 0  ){			
+		if (desloc1 == 0){  //01
 			return 0;
 		}else{
-			return 1;
+			return 1;       //10
 		}		
 	}
 	

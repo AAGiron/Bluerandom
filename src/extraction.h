@@ -14,7 +14,6 @@ int oddOrEvenExtraction(unsigned char rssiAtual);
 
 //unused | testing purposes:
 void printBinary(int n);
-unsigned char produceOneByteTest();
 
 #endif
 
