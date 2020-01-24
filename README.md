@@ -10,7 +10,7 @@ IoT platforms does not always have plenty of entropy sources available, and coul
 
 # How can I use it?
 
-Bluerandom outputs go to stdout. You can add to the system (through IOCTL - see Tools - or rngd) or to your application.
+Your computer or IoT board needs libbluetooth-dev and to the BLE compatible. Bluerandom outputs go to stdout (like /dev/random). You can add to the system (through IOCTL - see Tools - or rngd) or to your application.
 
 Basically Bluerandom generate numbers based on RSSI readings from Bluetooth Low Energy (BLE) devices nearby. Attention! Bluerandom has low throughput (feel free to contribute!) and the test results suggests its use as an additional source of entropy (not as a single RNG).
 
