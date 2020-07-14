@@ -70,9 +70,6 @@ int inquiryScan(int socketDescriptor) {
             //we want EVT_EXTENDED_INQUIRY_RESULT
             switch (buffer[1]) {
                 case EVT_EXTENDED_INQUIRY_RESULT: //0x2F
-                    //if (buffer[2] == 0)
-                      //break;                                        
-                    //wireshark says RSSI is located at byte number 17                    
                     
                     if (rssiOld == 0) {
                         rssiOld = (unsigned char) buffer[17];

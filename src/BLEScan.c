@@ -69,9 +69,7 @@ void setBLEinquiryScanParameters(int descriptor) {
     if (fcntl(descriptor, F_SETFL, fl | O_NONBLOCK) < 0) {
         printf("Error on Non blocking option\n");
         exit(-4);
-    }//else
-    //	printf("OK!\n");
-
+    }
 
 }
 
@@ -87,7 +85,7 @@ int extractBitFromRSSI(unsigned char rssiOld, unsigned char rssi, int method) {
     else if (method == 2)
         return oddOrEvenExtraction(rssi);
     else
-        return -1; //Hã?
+        return -1; 
 }
 
 //SCAN BLE

@@ -27,8 +27,6 @@ void printBinary(int n){
 }
 
 
-
-
 //Odd or Even Difference
 //possible problem: 2 devices with almost always same RSSI. Then the same difference will repeat.
 //we could tackle this problem testing only differencies with same BT_ADDR
@@ -37,10 +35,10 @@ int diferencaParOuImpar(unsigned char rssiAtual, unsigned char rssiOld){
 	
 		diferenca = rssiAtual - rssiOld;
 		if ( (diferenca) != 0) {
- 			//leituras diferentes.
-			if (diferenca % 2 == 0) //par: inserir 0;
+ 			//different readings.
+			if (diferenca % 2 == 0) //even: insert 0;
 				return 0;
-			else	//impar: inserir 1
+			else	//odd: insert 1
 				return 1;
 						
 		}else
