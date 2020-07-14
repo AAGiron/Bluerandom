@@ -20,8 +20,6 @@ The src/ directory contains Bluerandom source code:
 - extraction.c: contains extraction methods (see extraction.h to choose one from three possibilities);
 - scan.c: not used, but it scans in continuously inquiry mode to gather RSSI from BR/EDR devices. Since BLE advertise in shorter intervals, BR/EDR is not used here by default. 
 
-The linux_module_test/ directory contains an attempt to create a kernel module for Bluerandom. 
-
 The Tools/ directory contains some tools created to test Bluerandom and used in the paper.
 - AddEntropyIOCTL: reads from stdin and use the linux system call (RNDADDENTROPY) to add entropy to the system.
 - AES_PRNG, SHA_based_PRNG: both are PRNG implementations which were tested with Bluerandom as the seed source (Results can be found in the paper).
