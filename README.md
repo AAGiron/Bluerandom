@@ -33,9 +33,4 @@ Compile the src/ code with make and run it with sudo ./bluerandom. The generatio
 If "Error on opening HCI device. No such device" appears you might need to start it (sudo bluetoothctl; power on; exit - or with blueman program).
 
 
-Suggestions are welcome!
-
-
-# Author
-
-Alexandre Giron
+Suggestions are welcome.
