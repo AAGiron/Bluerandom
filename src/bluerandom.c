@@ -1,5 +1,5 @@
 //Bluerandom: attempt on generating random numbers from bluetooth rssi nearby devices
-//Author: Alexandre Augusto Giron
+//Author: 
 
 /*  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
