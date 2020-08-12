@@ -2,7 +2,7 @@
 
 Repository for the source code of Bluerandom: Bluetooth RSSI-Based Scalable Entropy Source.
 
-If you use it with academic purposes please standby for the paper "Giron, A.A.; Custódio, R.F. An Entropy Source based on the Bluetooth Received Signal Strength Indicator (to be published), 2020." You can also see the experiments and explanations there.
+If you use it with academic purposes please standby for the paper (to be published). You can also see the experiments and explanations there.
 ![alt text](https://github.com/AAGiron/Bluerandom/blob/master/bluerandom.png)
 
 
