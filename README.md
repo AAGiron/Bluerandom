@@ -2,7 +2,7 @@
 
 Repository for the source code of Bluerandom: Bluetooth RSSI-Based Scalable Entropy Source.
 
-If you use it with academic purposes please standby for the paper (to be published), or contact me for a preprint. 
+If you use it with academic purposes please standby for the paper (accepted at SBSeg 2020), or contact me for a preprint. 
 You can also see the experiments and more explanations there.
 ![alt text](https://github.com/AAGiron/Bluerandom/blob/master/bluerandom.png)
 
@@ -24,12 +24,15 @@ The src/ directory contains Bluerandom source code:
 The Tools/ directory contains some tools created to test Bluerandom and used in the paper.
 - AddEntropyIOCTL: reads from stdin and use the linux system call (RNDADDENTROPY) to add entropy to the system.
 - AES_PRNG, SHA_based_PRNG: both are PRNG implementations which were tested with Bluerandom as the seed source (Results can be found in the paper).
+-- AES is from mcrypt, and SHA is from openssl. Compile flags for gcc: ```-lcrypto -lmcrypt -lltdl```
+-- Both read from stdin, so to run these tools (example): ```cat /dev/urandom | ./a.out ```
 - LERandLauncher: the Bluetooth internal PRNG can be accessible by the LE Rand command, so this tool send this commmand to the BLE controller and generates random numbers. In the paper this tool was used to compare it with Bluerandom seeding a PRNG.
+-- Must compile it with ```-lbluetooth```
 
 
 Compile the src/ code with make and run it with sudo ./bluerandom. The generation process has low throughput and depends on how much BLE devices are nearby (see the paper for details).
 
-If "Error on opening HCI device. No such device" appears you might need to start it (sudo bluetoothctl; power on; exit - or with blueman program).
+If "Error on opening HCI device. No such device" appears you might need to start it (```sudo bluetoothctl; power on; exit``` - or with blueman program).
 
 
 Suggestions are welcome.
