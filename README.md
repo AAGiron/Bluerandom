@@ -12,9 +12,9 @@ IoT platforms does not always have plenty of entropy sources available, and coul
 
 # How can I use it?
 
-Your computer or IoT board needs libbluetooth-dev and to the BLE compatible. Bluerandom outputs go to stdout (like /dev/random). You can add to the system (through IOCTL - see Tools - or rngd) or to your application.
+First things first: **Attention**! Bluerandom has low throughput (feel free to contribute!) and the test results suggests its use as an additional source of entropy (not as a single RNG).
 
-Basically Bluerandom generate numbers based on RSSI readings from Bluetooth Low Energy (BLE) devices nearby. Attention! Bluerandom has low throughput (feel free to contribute!) and the test results suggests its use as an additional source of entropy (not as a single RNG).
+Your computer or IoT board needs libbluetooth-dev and to the BLE compatible. Bluerandom outputs go to stdout (like `cat /dev/random`). You can add to the system (through IOCTL - see Tools - or rngd) or to your application. Basically Bluerandom generate numbers based on RSSI readings from Bluetooth Low Energy (BLE) devices nearby.
 
 The src/ directory contains Bluerandom source code:
 - Bluerandom.c: initial code
@@ -31,7 +31,7 @@ The Tools/ directory contains some tools created to test Bluerandom and used in 
 -- Must compile it with ```-lbluetooth```
 
 
-Compile the src/ code with make and run it with sudo ./bluerandom. The generation process has low throughput and depends on how much BLE devices are nearby (see the paper for details).
+Compile the src/ code with `make` and run it with `sudo ./bluerandom`. The generation process has low throughput and depends on how much BLE devices are nearby (see the paper for details).
 
 If "Error on opening HCI device. No such device" appears you might need to start it (```sudo bluetoothctl; power on; exit``` - or with blueman program).
 
