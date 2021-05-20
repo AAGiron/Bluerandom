@@ -2,8 +2,9 @@
 
 Repository for the source code of Bluerandom: Bluetooth RSSI-Based Scalable Entropy Source.
 
-If you use it with academic purposes please standby for the paper (accepted at SBSeg 2020), or contact me for a preprint. 
+If you use it with academic purposes please check the [paper](https://000626cf-7296-4b40-ae6b-d1a550c81174.usrfiles.com/ugd/000626_a407008605d5455ba1ad035cfbd5f19a.pdf), presented at [SBSeg 2020](https://www.ceseg.org/anais-trilha-principal). 
 You can also see the experiments and more explanations there.
+
 ![alt text](https://github.com/AAGiron/Bluerandom/blob/master/bluerandom.png)
 
 
