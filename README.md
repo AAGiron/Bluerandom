@@ -37,3 +37,8 @@ If "Error on opening HCI device. No such device" appears you might need to start
 
 
 Suggestions are welcome.
+
+
+## Bluerandom App
+
+There's an app being developed, integrating bluerandom with Flutter: https://github.com/WorstOne0/Bluerandom-Flutter
